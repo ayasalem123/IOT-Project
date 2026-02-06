@@ -147,5 +147,3 @@ void loop() {
     Serial.print(F(" | lightOn="));   Serial.println(pkt.lightOn);
   }
 }
-message.txt
-4 Ko

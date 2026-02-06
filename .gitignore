@@ -1,0 +1,24 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env & secrets
+.env
+*.key
+*.pem
+
+# DB
+*.db
+*.sqlite
+*.sqlite3
+
+# Node-RED
+node-red/.config.* 
+node-red/.node-red/
+node-red/data/
+
+# OS
+.DS_Store
+Thumbs.db
