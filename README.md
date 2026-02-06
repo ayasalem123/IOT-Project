@@ -1,5 +1,25 @@
 # IoT Lighting Monitoring with Blockchain Proof
 
+## 🔧 Required Services
+
+This project depends on the following services:
+
+### Ganache — Local Blockchain
+Ganache is used to run a local Ethereum blockchain network where data proofs are stored.
+
+Install Ganache:
+https://trufflesuite.com/ganache/
+Ganache allows inspection of blocks, transactions, and accounts during testing.
+
+---
+
+### Mosquitto — MQTT Broker
+Mosquitto acts as the MQTT broker between IoT devices and Node-RED.
+
+Install Mosquitto:
+https://mosquitto.org/download/
+
+
 ##  Project Overview
 This project implements an IoT-based monitoring system for coworking space lighting, combining sensor data collection, local data storage, and blockchain anchoring to guarantee data integrity and traceability.
 
