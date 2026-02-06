@@ -1,103 +1,101 @@
-##IoT Lighting Monitoring with Blockchain Proof
- Project Overview
+# IoT Lighting Monitoring with Blockchain Proof
 
+## 📌 Project Overview
 This project implements an IoT-based monitoring system for coworking space lighting, combining sensor data collection, local data storage, and blockchain anchoring to guarantee data integrity and traceability.
 
-Sensor data (presence and luminosity) are transmitted through the network, stored locally, and a cryptographic proof of each message is recorded on a blockchain network to prevent data tampering.
+Sensor data such as presence detection and luminosity levels are transmitted through the network, stored locally, and a cryptographic proof of each message is recorded on a blockchain network to prevent data tampering.
 
-The system demonstrates how blockchain can enhance trust and auditability in IoT infrastructures.
+The system demonstrates how blockchain technology can enhance trust, transparency, and auditability in IoT infrastructures.
 
- Objectives
+---
 
-Monitor lighting conditions in shared spaces.
+## 🎯 Objectives
+- Monitor lighting conditions in shared workspaces
+- Collect and store IoT sensor data reliably
+- Guarantee data integrity using blockchain proofs
+- Detect tampering or modification attempts
+- Provide full traceability of IoT messages
 
-Collect and store sensor data reliably.
+---
 
-Guarantee data integrity using blockchain proofs.
+## 🏗 System Architecture
+The system is composed of:
 
-Detect any modification or tampering of stored data.
+1. IoT sensors collecting luminosity and presence data
+2. MQTT / Node-RED pipeline for message transmission
+3. Node.js backend API for data processing
+4. SQLite database for local storage
+5. Blockchain anchoring of message hashes
+6. Verification API to validate integrity
 
-Provide traceability of IoT messages.
+Only cryptographic proofs are stored on-chain, while full data remain in local storage.
 
- Architecture
+---
 
-System components:
+## ⚙️ Technologies Used
+- Node.js
+- Express.js API
+- SQLite database
+- Ethers.js
+- Ganache local Ethereum blockchain
+- MQTT protocol
+- Node-RED
+- SHA-256 / Keccak hashing
 
-IoT sensors send data.
+---
 
-Data flows through Node-RED / MQTT.
+## 🔐 Security Concept
+Instead of storing full IoT data on blockchain, the system stores only a cryptographic hash proof.
 
-Backend API receives and stores data in SQLite.
+If stored data are modified later, verification fails because the recalculated hash no longer matches the blockchain record.
 
-A hash of each message is anchored on blockchain.
+This guarantees data immutability and traceability while keeping blockchain usage lightweight.
 
-Verification endpoint checks data integrity.
+---
 
-⚙️ Technologies Used
+## 🚀 API Endpoints
 
-Node.js + Express API
+### Store Data Proof
+`POST /proof`
 
-SQLite database
+Stores IoT data in database and anchors its hash on blockchain.
 
-Ethers.js
+---
 
-Ganache (local Ethereum blockchain)
+### Retrieve Stored Record
+`GET /record/:id`
 
-MQTT / Node-RED (IoT message handling)
+Returns stored IoT record.
 
-SHA-256 / Keccak hashing
+---
 
- Security Concept
+### Verify Data Integrity
+`POST /verify/:id`
 
-Instead of storing data directly on blockchain, the system stores:
+Compares stored data hash with blockchain proof.
 
-data locally in database
+---
 
-only a hash proof on blockchain
+## 🧪 Demonstration Scenario
+1. IoT sensor sends data.
+2. Data are stored locally.
+3. Hash proof is anchored on blockchain.
+4. Database record is manually modified.
+5. Verification endpoint detects mismatch.
 
-Any modification of stored data results in hash mismatch, proving tampering.
+This demonstrates blockchain immutability and data protection.
 
- API Endpoints
-Store proof
-POST /proof
+---
 
+## 📚 Academic Context
+This project was developed within an academic IoT engineering project exploring:
 
-Stores sensor data and anchors hash on blockchain.
+- IoT architecture
+- secure data transmission
+- blockchain integration
+- data traceability mechanisms
 
-Read stored record
-GET /record/:id
+---
 
-
-Returns stored data.
-
-Verify integrity
-POST /verify/:id
-
-
-Checks database data against blockchain proof.
-
-🧪 Demonstration Scenario
-
-Sensor sends data.
-
-Data stored in DB.
-
-Hash anchored on blockchain.
-
-Modify DB manually.
-
-Verification detects mismatch.
-
-This demonstrates blockchain immutability.
-
- Educational Context
-
-This project was developed as part of an academic IoT project to explore:
-
-IoT system architecture
-
-data integrity
-
-blockchain integration
-
-distributed trust mechanisms
+## 👤 Author
+Seif — IoT & AI Engineering Student
