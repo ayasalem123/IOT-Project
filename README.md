@@ -1,6 +1,6 @@
 # IoT Lighting Monitoring with Blockchain Proof
 
-## 📌 Project Overview
+##  Project Overview
 This project implements an IoT-based monitoring system for coworking space lighting, combining sensor data collection, local data storage, and blockchain anchoring to guarantee data integrity and traceability.
 
 Sensor data such as presence detection and luminosity levels are transmitted through the network, stored locally, and a cryptographic proof of each message is recorded on a blockchain network to prevent data tampering.
@@ -9,7 +9,7 @@ The system demonstrates how blockchain technology can enhance trust, transparenc
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 - Monitor lighting conditions in shared workspaces
 - Collect and store IoT sensor data reliably
 - Guarantee data integrity using blockchain proofs
@@ -18,7 +18,7 @@ The system demonstrates how blockchain technology can enhance trust, transparenc
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 The system is composed of:
 
 1. IoT sensors collecting luminosity and presence data
@@ -32,7 +32,7 @@ Only cryptographic proofs are stored on-chain, while full data remain in local s
 
 ---
 
-## ⚙️ Technologies Used
+##  Technologies Used
 - Node.js
 - Express.js API
 - SQLite database
@@ -44,7 +44,7 @@ Only cryptographic proofs are stored on-chain, while full data remain in local s
 
 ---
 
-## 🔐 Security Concept
+##  Security Concept
 Instead of storing full IoT data on blockchain, the system stores only a cryptographic hash proof.
 
 If stored data are modified later, verification fails because the recalculated hash no longer matches the blockchain record.
@@ -53,7 +53,7 @@ This guarantees data immutability and traceability while keeping blockchain usag
 
 ---
 
-## 🚀 API Endpoints
+##  API Endpoints
 
 ### Store Data Proof
 `POST /proof`
@@ -76,7 +76,7 @@ Compares stored data hash with blockchain proof.
 
 ---
 
-## 🧪 Demonstration Scenario
+##  Demonstration Scenario
 1. IoT sensor sends data.
 2. Data are stored locally.
 3. Hash proof is anchored on blockchain.
@@ -87,7 +87,7 @@ This demonstrates blockchain immutability and data protection.
 
 ---
 
-## 📚 Academic Context
+##  Academic Context
 This project was developed within an academic IoT engineering project exploring:
 
 - IoT architecture
@@ -97,5 +97,5 @@ This project was developed within an academic IoT engineering project exploring:
 
 ---
 
-## 👤 Author
-Seif — IoT & AI Engineering Student
+##  Author
+Aya — IoT & AI Engineering Student
